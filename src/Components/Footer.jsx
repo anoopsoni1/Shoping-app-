@@ -19,8 +19,8 @@ function Footer() {
             </div>
         </div>
 
-        <div className="flex-1 text-right">
-            <p>Contact: <a href="mailto:sonianup8965@gmail.com.com" class="text-yellow-400">support@shoppingcart.com</a></p>
+        <div className="flex text-right">
+            <p>Contact: <a href="mailto:sonianup8965@gmail.com" class="text-yellow-400">shoppingcart.com</a></p>
         </div>
     </div>
 </footer>
