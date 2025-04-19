@@ -1,126 +1,155 @@
 import React, { useState } from 'react'
-
+import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { addtocart } from '../Feature/Slice';
 
 function Products() {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (product) => {
+    dispatch(addtocart(product));
+       toast.success(`${name} Added succesfully`);
+  };
+
+
+  const products = [
+    { 
+      id : 5 ,
+      name : "product 5" ,
+      price : 64.55 ,
+      image : 'https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/16513990/2022/1/26/d8f01fca-59e2-4f82-8214-9cd61d373be41643184909272-Roadster-Men-White-Sneakers-6661643184908868-1.jpg'
+    },
+    { 
+      id : 6 ,
+      name : "product 6" ,
+      price : 94.55 ,
+      image : 'https://m.media-amazon.com/images/I/51sDLAxmy3L._AC_UY1000_.jpg'
+    } ,
+    { 
+      id : 7 ,
+      name : "product 7" ,
+      price : 34.85 ,
+      image : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtG6-2oWZHp_JTlBEBZ3l2bmbBx0PZzvKqsQ&s'
+    },
+    { 
+      id : 8 ,
+      name : "product 8" ,
+      price : 84.95 ,
+      image : 'https://ibisfab.com/cdn/shop/files/jacquard-silk-sarees-dark-wine-colour-wedding-wear-1.jpg?v=1716026906'
+    },
+    { 
+      id : 9 ,
+      name : "product 9" ,
+      price : 74.67 ,
+      image : 'https://m.media-amazon.com/images/I/614uxdVXGGL._AC_UY1100_.jpg'
+    },
+    { 
+      id : 10 ,
+      name : "product 10" ,
+      price : 68.51 ,
+      image : 'https://cdn.vox-cdn.com/thumbor/4FY_VHvSCm0r4R9eUxmeHfL03aA=/0x0:2040x1360/2000x1333/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/22046476/vpavic_4291_20201113_0366.0.jpg'
+    },
+    { 
+      id : 11 ,
+      name : "product 11" ,
+      price : 54.45 ,
+      image : 'https://www.foodandwine.com/thmb/wtSAc8XIifwjyd8BMFZbErAOyQc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/faw-product-breville-smart-rkilgore-44-c5a16502b0084c71aca178479399f2b8.jpg'
+    },
+    { 
+      id : 12 ,
+      name : "product 12" ,
+      price : 99.65 ,
+      image : 'https://images-cdn.ubuy.co.in/654b8e16333d0d5c3130b3e8-lige-mens-watches-waterproof-stainless.jpg'
+    },
+    { 
+      id : 13 ,
+      name : "product 13" ,
+      price : 26.57 ,
+      image : 'https://m.media-amazon.com/images/I/71fYAthCwfL.jpg'
+    },
+    { 
+      id : 14 ,
+      name : "product 14" ,
+      price : 78.89 ,
+      image : 'https://dynamicdistributors.in/wp-content/uploads/2023/10/Bajaj-ATX-3-750-Watt-Pop-up-Toaster-2-Slice-Automatic-Pop-up-Toaster-Dust-Cover-Slide-Out-Crumb-Tray-6-Level-Browning-Controls-2-Year-Warranty-by-Bajaj-BlackSilver-Electric-Toaster-0.jpg'
+    },
+    { 
+      id : 15 ,
+      name : "product 15" ,
+      price : 32.51 ,
+      image : 'https://images2.alphacoders.com/117/thumb-1920-1172003.jpg'
+    },
+    { 
+      id : 16 ,
+      name : "product 16" ,
+      price : 78.52 ,
+      image : 'https://w0.peakpx.com/wallpaper/580/545/HD-wallpaper-vidya-beautiful-hotpic-saree-smiling.jpg'
+    },
+    { 
+      id : 17 ,
+      name : "product 17" ,
+      price : 75.34 ,
+      image : 'https://omsaraimages.s3.eu-west-2.amazonaws.com/wp-content/uploads/20191111150932/1037-1.jpg'
+    },
+    { 
+      id : 18 ,
+      name : "product 18" ,
+      price : 78.69 ,
+      image : 'https://i.redd.it/5izdtm01avbc1.png'
+    },
+    { 
+      id : 19 ,
+      name : "product 19" ,
+      price : 46.58 ,
+      image : 'https://m.media-amazon.com/images/I/61ZpKWxNwwL.jpg'
+    },
+    { 
+      id : 20 ,
+      name : "product 20" ,
+      price : 36.55 ,
+      image : 'https://magnoliahome.co.in/wp-content/uploads/2021/08/Jasper-Arm-Chair-1.1-1.jpg'
+    }, { 
+      id : 21 ,
+      name : "product 21" ,
+      price : 78.5,
+      image : 'https://m.media-amazon.com/images/I/61klPbpaRfL.jpg'
+    },
+    { 
+      id : 22 ,
+      name : "product 22" ,
+      price : 96.55 ,
+      image : 'https://5.imimg.com/data5/ANDROID/Default/2022/2/RD/UE/RG/73718625/product-jpeg.jpg'
+    }
+  ]
+
+
 
   return (
     <>
-    
     <main className="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
-    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      
-   
-      <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-        <img className="w-full h-48 object-cover rounded-md mb-4" src="https://img.drz.lazcdn.com/static/lk/p/bbaa6c6345a63d367273ac23a80a837f.jpg_720x720q80.jpg" alt="Product 1" />
-        <h2 className="text-xl font-semibold mb-2">Product Name 1</h2>
-        <p className="text-gray-600 mb-4">$29.99</p>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Add to Cart</button>
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="bg-white rounded-lg shadow hover:shadow-lg transition p-6"
+          >
+            <img
+              className="w-full h-48 object-cover rounded-md mb-4"
+              src={product.image}
+              alt={product.name}
+            />
+            <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
+            <p className="text-gray-600 mb-4">${product.price}</p>
+            <button
+              onClick={() => handleAddToCart(product)}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+            >
+              Add to Cart
+            </button>
+          </div>
+        ))}
       </div>
-
- 
-      <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-        <img className="w-full h-48 object-cover rounded-md mb-4" src="https://omsaraimages.s3.eu-west-2.amazonaws.com/wp-content/uploads/20191111150932/1037-1.jpg" alt="Product 2" />
-        <h2 className="text-xl font-semibold mb-2">Product Name 2</h2>
-        <p className="text-gray-600 mb-4">$39.99</p>
-        <button  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Add to Cart</button>
-      </div>
-
-      <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-        <img className="w-full h-48 object-cover rounded-md mb-4" src="https://wholetex.sgp1.cdn.digitaloceanspaces.com/full/gajani-dola-silk-wedding-saree-collection-2347.jpg" alt="Product 3" />
-        <h2 className="text-xl font-semibold mb-2">Product Name 3</h2>
-        <p className="text-gray-600 mb-4">$49.99</p>
-        <button  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Add to Cart</button>
-      </div>
-
-      <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-        <img className="w-full h-48 object-cover rounded-md mb-4" src="https://cdn.vox-cdn.com/thumbor/4FY_VHvSCm0r4R9eUxmeHfL03aA=/0x0:2040x1360/2000x1333/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/22046476/vpavic_4291_20201113_0366.0.jpg" alt="Product 3" />
-        <h2 className="text-xl font-semibold mb-2">Product Name 3</h2>
-        <p className="text-gray-600 mb-4">$49.99</p>
-        <button  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Add to Cart</button>
-      </div>
-
-      <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-        <img className="w-full h-48 object-cover rounded-md mb-4" src="https://i.imgur.com/Ex5x3IU.jpg" alt="Product 3" />
-        <h2 className="text-xl font-semibold mb-2">Product Name 3</h2>
-        <p className="text-gray-600 mb-4">$49.99</p>
-        <button  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Add to Cart</button>
-      </div>
-
-      <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-        <img className="w-full h-48 object-cover rounded-md mb-4" src="https://i.imgur.com/AzAY4Ed.jpeg" alt="Product 3" />
-        <h2 className="text-xl font-semibold mb-2">Product Name 3</h2>
-        <p className="text-gray-600 mb-4">$49.99</p>
-        <button  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Add to Cart</button>
-      </div>
-
-      <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-        <img className="w-full h-48 object-cover rounded-md mb-4" src="https://i.imgur.com/3oXNBst.jpeg" alt="Product 3" />
-        <h2 className="text-xl font-semibold mb-2">Product Name 3</h2>
-        <p className="text-gray-600 mb-4">$49.99</p>
-        <button  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Add to Cart</button>
-      </div>
-
-      <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-        <img className="w-full h-48 object-cover rounded-md mb-4" src="https://i.imgur.com/DMQHGA0.jpeg" alt="Product 3" />
-        <h2 className="text-xl font-semibold mb-2">Product Name 3</h2>
-        <p className="text-gray-600 mb-4">$49.99</p>
-        <button  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Add to Cart</button>
-      </div>
-
-
-      <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-        <img className="w-full h-48 object-cover rounded-md mb-4" src="https://i.imgur.com/YaSqa06.jpeg" alt="Product 3" />
-        <h2 className="text-xl font-semibold mb-2">Product Name 3</h2>
-        <p className="text-gray-600 mb-4">$49.99</p>
-        <button  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Add to Cart</button>
-      </div>
-
-
-      <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-        <img className="w-full h-48 object-cover rounded-md mb-4" src="https://i.imgur.com/OKn1KFI.jpeg" alt="Product 3" />
-        <h2 className="text-xl font-semibold mb-2">Product Name 3</h2>
-        <p className="text-gray-600 mb-4">$49.99</p>
-        <button  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Add to Cart</button>
-      </div>
-
-      <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-        <img className="w-full h-48 object-cover rounded-md mb-4" src="https://i.imgur.com/SolkFEB.jpeg" alt="Product 3" />
-        <h2 className="text-xl font-semibold mb-2">Product Name 3</h2>
-        <p className="text-gray-600 mb-4">$49.99</p>
-        <button  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Add to Cart</button>
-      </div>
-
-      <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-        <img className="w-full h-48 object-cover rounded-md mb-4" src="https://i.imgur.com/9DqEOV5.jpeg" alt="Product 3" />
-        <h2 className="text-xl font-semibold mb-2">Product Name 3</h2>
-        <p className="text-gray-600 mb-4">$49.99</p>
-        <button  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Add to Cart</button>
-      </div>
-
-      <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-        <img className="w-full h-48 object-cover rounded-md mb-4" src="https://i.imgur.com/eGOUveI.jpeg" alt="Product 3" />
-        <h2 className="text-xl font-semibold mb-2">Product Name 3</h2>
-        <p className="text-gray-600 mb-4">$49.99</p>
-        <button  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Add to Cart</button>
-      </div>
-
-
-      <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-        <img className="w-full h-48 object-cover rounded-md mb-4" src="https://i.imgur.com/cBuLvBi.jpeg" alt="Product 3" />
-        <h2 className="text-xl font-semibold mb-2">Product Name 3</h2>
-        <p className="text-gray-600 mb-4">$49.99</p>
-        <button  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Add to Cart</button>
-      </div>
-
-      <div className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
-        <img className="w-full h-48 object-cover rounded-md mb-4" src="https://i.imgur.com/LGk9Jn2.jpeg" alt="Product 3" />
-        <h2 className="text-xl font-semibold mb-2">Product Name 3</h2>
-        <p className="text-gray-600 mb-4">$49.99</p>
-        <button   className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Add to Cart</button>
-      </div>
-        
-    </div>
-  </main>    </>
+    </main>   </>
   )
 }
 

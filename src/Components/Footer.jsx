@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -6,7 +7,7 @@ function Footer() {
     <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
        
         <div className="flex-1">
-            <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+            <p>&copy; 2025 Anoop soni. All Rights Reserved.</p>
         </div>
      
         <div className="flex-1 text-center">
@@ -19,7 +20,7 @@ function Footer() {
         </div>
 
         <div className="flex-1 text-right">
-            <p>Contact: info@yourcompany.com</p>
+            <p>Contact: <a href="mailto:sonianup8965@gmail.com.com" class="text-yellow-400">support@shoppingcart.com</a></p>
         </div>
     </div>
 </footer>

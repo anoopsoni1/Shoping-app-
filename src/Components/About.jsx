@@ -5,8 +5,8 @@ function About() {
    <>
     <section class="py-16 px-4 bg-white">
         <div class="container mx-auto text-center">
-            <h1 class="text-4xl font-bold text-gray-900 mb-6">About ShopEasy</h1>
-            <p class="text-lg text-gray-700 mb-6">Welcome to ShopEasy! We are your go-to platform for online shopping. From the latest tech gadgets to trendy fashion, we offer a wide range of products at affordable prices. Our mission is to make shopping easy, convenient, and enjoyable for everyone.</p>
+            <h1 class="text-4xl font-bold text-gray-900 mb-6">About Shopping-cart</h1>
+            <p class="text-lg text-gray-700 mb-6">Welcome to shopping-cart! We are your go-to platform for online shopping. From the latest tech gadgets to trendy fashion, we offer a wide range of products at affordable prices. Our mission is to make shopping easy, convenient, and enjoyable for everyone.</p>
         </div>
 
         <div class="container mx-auto mt-12 grid md:grid-cols-2 gap-8 px-6">
@@ -31,7 +31,7 @@ function About() {
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-semibold mb-4">Get in Touch</h2>
             <p class="text-lg mb-6">Have any questions or feedback? Feel free to reach out to us!</p>
-            <p class="text-lg">Email: <a href="mailto:support@shopeasy.com" class="text-yellow-400">support@shopeasy.com</a></p>
+            <p class="text-lg">Email: <a href="mailto:sonianup8965@gmail.com.com" class="text-yellow-400">support@shoppingcart.com</a></p>
         </div>
     </section>
    </>

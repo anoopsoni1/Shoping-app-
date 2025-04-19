@@ -9,6 +9,12 @@ import Services from './Components/Services.jsx'
 import Contact from './Components/Contact.jsx'
 import Products from './Components/Products.jsx'
 import Cart from './Components/Cart.jsx'
+import { Analytics } from "@vercel/analytics/react"
+import { Provider } from 'react-redux'
+import { store } from './Store/Store.js'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import LoginPage from './Components/Login.jsx'
 
 const router = createBrowserRouter([
   {
@@ -38,6 +44,10 @@ const router = createBrowserRouter([
        {
         path : '/cart' ,
         element : <Cart />
+       },
+       {
+        path : '/login',
+        element :<LoginPage />
        }
   ]
   }
@@ -45,7 +55,8 @@ const router = createBrowserRouter([
 
 
 createRoot(document.getElementById('root')).render(
-  <>
+  <Provider store={store}>
+      <ToastContainer /> 
   <RouterProvider router = {router} />
-  </>
+  </Provider>
 )

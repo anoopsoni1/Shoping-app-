@@ -7,7 +7,7 @@ function Header() {
  <>
     <header className="flex justify-between items-center p-6 bg-gray-800 text-white">
    
-    <div className="text-2xl font-bold"><img src="https://th.bing.com/th/id/OIP.OHaqMPbNJF-EwiX5hgO8CwAAAA?rs=1&pid=ImgDetMain" alt="#"  height={70} width={70} className='rounded-full'  /></div>
+    <div className="text-2xl font-bold"><img src="https://trendcart.in/cdn/shop/files/Logo1_1200x1200.png?v=1672830851" alt="#"  height={80} width={80} className='rounded-full'  /></div>
 
     <nav className="hidden md:flex space-x-8">
         <span className="text-lg cursor-pointer hover:text-yellow-400"> <NavLink className={({isActive})=> 
@@ -23,7 +23,7 @@ function Header() {
     <div className='flex gap-7 '>
      <button  className='bg-yellow-400 text-gray-800 py-2 px-6 rounded-md font-semibold hover:bg-yellow-500 transition duration-300 ' > <Link to='/cart'>Cart </Link> </button>
     <button className="bg-yellow-400 text-gray-800 py-2 px-6 rounded-md font-semibold hover:bg-yellow-500 transition duration-300">
-        Get Started
+      <Link to="/login" > Get Started</Link>  
     </button>
     </div>
 </header>

@@ -4,9 +4,9 @@ function Services() {
   return (
   <>
   
-  <section class="bg-blue-600 text-white text-center py-20">
+  <section class="bg-gray-800 text-white text-center py-20">
         <h1 class="text-4xl font-extrabold">Discover Our Services</h1>
-        <p class="mt-4 text-lg">We offer top-notch services to help your business grow and succeed.</p>
+        <p class="mt-4 text-lg">We offer top services to help your business grow and succeed.</p>
     </section>
 
 
@@ -36,7 +36,7 @@ function Services() {
         <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-3xl font-bold mb-8">Get In Touch</h2>
             <p class="text-lg text-gray-600 mb-6">Have any questions or want to work with us? Feel free to reach out!</p>
-            <a href="mailto:info@yourcompany.com" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-500">Contact Us</a>
+            <a href="mailto:sonianup8965@gmail.com.com" class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-500">Contact Us</a>
         </div>
     </section>
       </>
