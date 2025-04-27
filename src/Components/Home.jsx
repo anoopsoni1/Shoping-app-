@@ -3,13 +3,22 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addtocart } from '../Feature/Slice';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom'
+import "./Slider.css"
 function Home() {
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const handleAddToCart = (product) => {
     dispatch(addtocart(product));
        toast.success(`${name} Added succesfully`);
   };
+
+    const handleBuyNow = (product) => {
+      dispatch(addtocart(product));
+      toast.success(`Proceeding to checkout for ${product.name}!`);
+      navigate('/buy');
+    };
+  
 
   const products = [
     {
@@ -37,9 +46,10 @@ function Home() {
       image: 'https://image.hm.com/assets/hm/48/02/48023efda4d844898f8b6cde33cc3c4cc0db2db8.jpg?imwidth=564',
     },
   ];
-
+  
   return (
     <>
+
       <section className="bg-gray-800 text-white text-center py-20">
         <h1 className="text-4xl font-semibold mb-4">Discover Your Perfect Style</h1>
         <p className="text-lg mb-6">Find the best deals and the latest trends all in one place.</p>
@@ -66,12 +76,20 @@ function Home() {
               />
               <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
               <p className="text-gray-600 mb-4">${product.price}</p>
+              <div className='justify-around flex'>
               <button
                 onClick={() => handleAddToCart(product)}
                 className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-500"
               >
                 Add to Cart
               </button>
+              <button
+                onClick={() => handleBuyNow(product)}
+                className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full"
+              >
+                Buy Now
+              </button>
+              </div>
             </div>
           ))}
         </div>

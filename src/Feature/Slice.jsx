@@ -22,9 +22,13 @@ if(existingitem){
         removefromcart: (state, action) => {
             state.cartitem = state.cartitem.filter(item => item.id !== action.payload);
           },
+          setCartFromLocalStorage: (state, action) => {
+
+            state.cartitem = action.payload;
+          },
       }
   })
 
-  export const {addtocart ,removefromcart} = cartslice.actions; 
+  export const {addtocart ,removefromcart,setCartFromLocalStorage} = cartslice.actions; 
     
      export default cartslice.reducer 

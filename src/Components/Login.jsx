@@ -1,6 +1,9 @@
 import React from 'react'
 
 export default function LoginPage() {
+  const hello = ()=>{
+     alert("This service is not working")
+  }
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
         <div className="max-w-md w-full bg-white p-8 rounded-2xl shadow-lg">
@@ -35,11 +38,12 @@ export default function LoginPage() {
               <a className="text-blue-500 hover:underline">Forgot password?</a>
             </div>
   
-            <button
+            <button onClick={hello}
               type="submit"
               className="w-full bg-blue-600 text-white py-2 rounded-xl font-semibold hover:bg-blue-700 transition"
             >
               Sign In
+              
             </button>
           </form>
   

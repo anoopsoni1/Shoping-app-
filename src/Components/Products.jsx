@@ -2,15 +2,21 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { addtocart } from '../Feature/Slice';
-
+import { useNavigate } from 'react-router-dom'
 function Products() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleAddToCart = (product) => {
     dispatch(addtocart(product));
        toast.success(`${name} Added succesfully`);
   };
 
+  const handleBuyNow = (product) => {
+    dispatch(addtocart(product));
+    toast.success(`Proceeding to checkout for ${product.name}!`);
+    navigate('/buy');
+  };
 
   const products = [
     { 
@@ -121,17 +127,16 @@ function Products() {
       image : 'https://5.imimg.com/data5/ANDROID/Default/2022/2/RD/UE/RG/73718625/product-jpeg.jpg'
     }
   ]
-
-
-
+  
+   
   return (
-    <>
+    <> 
     <main className="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {products.map((product) => (
           <div
             key={product.id}
-            className="bg-white rounded-lg shadow hover:shadow-lg transition p-6"
+            className="bg-white rounded-lg shadow hover:shadow-lg transition p-6 "
           >
             <img
               className="w-full h-48 object-cover rounded-md mb-4"
@@ -140,12 +145,20 @@ function Products() {
             />
             <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
             <p className="text-gray-600 mb-4">${product.price}</p>
+            <div className='flex gap-5'>
             <button
               onClick={() => handleAddToCart(product)}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded *:"
             >
               Add to Cart
             </button>
+            <button
+                onClick={() => handleBuyNow(product)}
+                className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded"
+              >
+                Buy Now
+              </button>
+              </div>
           </div>
         ))}
       </div>
