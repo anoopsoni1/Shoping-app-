@@ -171,12 +171,6 @@ function Products() {
               >
                 Buy Now
               </button>
-              <a
-                href="/buy"
-                className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded"
-              >
-                Buy
-              </a>
             </div>
           </div>
         ))}
