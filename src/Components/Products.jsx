@@ -25,7 +25,7 @@ function Products() {
   const products = [
     { 
       id: nanoid(),
-      name : "product 5" ,
+      name : "anoop" ,
       price : 64.55 ,
       image : 'https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/16513990/2022/1/26/d8f01fca-59e2-4f82-8214-9cd61d373be41643184909272-Roadster-Men-White-Sneakers-6661643184908868-1.jpg'
     },
@@ -148,7 +148,7 @@ function Products() {
         />
       </div>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {filteredProducts.map((product) => (
           <div key={product.id} className="bg-white rounded-lg shadow hover:shadow-lg transition p-6">
             <img
@@ -157,8 +157,8 @@ function Products() {
               alt={product.name}
             />
             <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
-            <p className="text-gray-600 mb-4">${product.price}</p>
-            <div className="flex space-x-4">
+            <p className="text-gray-600 mb-4">₹{product.price}</p>
+            <div className="flex space-x-4 gap-1">
               <button
                 onClick={() => dispatch(handleAddToCart(product))}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
@@ -167,7 +167,7 @@ function Products() {
               </button>
               <button
                 onClick={() => handleBuyNow(product)}
-                className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full"
+                className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md"
               >
                 Buy Now
               </button>
