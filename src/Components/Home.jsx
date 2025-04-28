@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addtocart } from '../Feature/Slice';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom'
-import "./Slider.css"
+import { nanoid } from '@reduxjs/toolkit';
+
 function Home() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -22,25 +23,25 @@ function Home() {
 
   const products = [
     {
-      id: 1,
+      id: nanoid(),
       name: 'Product 1',
       price: 49.99,
       image: 'https://image.hm.com/assets/hm/0f/b2/0fb232d5c255fe7627ee2ba51ca16cf61505785b.jpg?imwidth=564',
     },
     {
-      id: 2,
+      id: nanoid(),
       name: 'Product 2',
       price: 89.99,
       image: 'https://th.bing.com/th/id/OIP.G_zoDUylCvMk3OJzvCgaswHaLF?rs=1&pid=ImgDetMain',
     },
     {
-      id: 3,
+      id: nanoid(),
       name: 'Product 3',
       price: 129.99,
       image: 'https://image.hm.com/assets/hm/60/46/6046444722aee90aafedb9c2b7ef666fb9730732.jpg?imwidth=564',
     },
     {
-      id: 4,
+      id: nanoid(),
       name: 'Product 4',
       price: 199.99,
       image: 'https://image.hm.com/assets/hm/48/02/48023efda4d844898f8b6cde33cc3c4cc0db2db8.jpg?imwidth=564',
@@ -75,7 +76,7 @@ function Home() {
                 className="w-full h-48 object-cover rounded-md mb-4"
               />
               <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-              <p className="text-gray-600 mb-4">${product.price}</p>
+              <p className="text-gray-600 mb-4">₹{product.price}</p>
               <div className='justify-around flex'>
               <button
                 onClick={() => handleAddToCart(product)}
