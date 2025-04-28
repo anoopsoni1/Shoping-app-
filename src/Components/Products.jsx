@@ -14,7 +14,7 @@ function Products() {
 
   const handleBuyNow = (product) => {
     dispatch(addtocart(product));
-    toast.success(`Proceeding to checkout for ${product.name}!`);
+    toast.success(` ${product.name}!`);
     navigate('/buy');
   };
 
@@ -130,7 +130,8 @@ function Products() {
   
    
   return (
-    <> 
+    <>  
+  
     <main className="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {products.map((product) => (
