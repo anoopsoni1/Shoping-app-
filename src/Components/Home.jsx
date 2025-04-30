@@ -5,6 +5,7 @@ import { addtocart } from '../Feature/Slice';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom'
 import { nanoid } from '@reduxjs/toolkit';
+import RotatingText from './RotatingText'
 
 function Home() {
   const dispatch = useDispatch();
@@ -52,7 +53,22 @@ function Home() {
     <>
 
       <section className="bg-gray-800 text-white text-center py-20">
-        <h1 className="text-4xl font-semibold mb-4">Discover Your Perfect Style</h1>
+        <h1 className="text-4xl font-semibold mb-4">
+        Discover Your 
+        <RotatingText
+     texts={['Trends', 'Brands', 'Choices']}
+    mainClassName="px-2 sm:px-2 md:px-3 bg-gray-800 text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+    staggerFrom={"last"}
+    initial={{ y: "100%" }}
+    animate={{ y: 0 }}
+    exit={{ y: "-120%" }}
+    staggerDuration={0.025}
+    splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+    transition={{ type: "spring", damping: 30, stiffness: 400 }}
+    rotationInterval={2000}
+/>
+       
+          </h1>
         <p className="text-lg mb-6">Find the best deals and the latest trends all in one place.</p>
         <Link
           to="/products"

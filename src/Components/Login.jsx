@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+import StarBorder from './StarBorder'
 export default function LoginPage() {
   const hello = ()=>{
      alert("This service is not working")
@@ -38,14 +38,21 @@ export default function LoginPage() {
               </label>
               <a className="text-blue-500 hover:underline">Forgot password?</a>
             </div>
-  
-            <button onClick={hello}
+    
+<button onClick={hello}
               type="submit"
-              className="w-full bg-blue-600 text-white py-2 rounded-xl font-semibold hover:bg-blue-700 transition"
+              className="w-full text-white py-1 rounded-xl font-semibold transition"
             >
-              Sign In
-              
+         <StarBorder
+  as="button"
+  className="custom-class"
+  color="red"
+  speed="2s"
+> Sign In</StarBorder>    
+     
+            
             </button>
+
           </form>
   
           <div className="mt-6 text-center text-sm text-gray-500">

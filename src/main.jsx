@@ -73,6 +73,6 @@ createRoot(document.getElementById('root')).render(
       <ToastContainer autoClose={1000} pauseOnHover={false}  /> 
   <RouterProvider router = {router} />
             <Analytics/>
-            {/* <SplashCursor /> */}
+            <SplashCursor />
   </Provider>
 )
