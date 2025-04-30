@@ -16,6 +16,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import LoginPage from './Components/Login.jsx'
 import Buy from './Components/Buy.jsx'
 import { Analytics } from "@vercel/analytics/react"
+import SplashCursor from './SplashCursor'
+
+
 
 const router = createBrowserRouter([
   {
@@ -66,5 +69,6 @@ createRoot(document.getElementById('root')).render(
       <ToastContainer autoClose={1000} pauseOnHover={false}  /> 
   <RouterProvider router = {router} />
             <Analytics/>
+            <SplashCursor />
   </Provider>
 )
