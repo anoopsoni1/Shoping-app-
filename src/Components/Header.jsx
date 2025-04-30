@@ -1,6 +1,5 @@
 import React, { useState , useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import  CircularText from "./Circular"
 function Header() { 
   return (
  <>

@@ -1,4 +1,3 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, Router ,RouterProvider } from 'react-router-dom'
@@ -16,9 +15,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import LoginPage from './Components/Login.jsx'
 import Buy from './Components/Buy.jsx'
 import { Analytics } from "@vercel/analytics/react"
-import SplashCursor from './Components/SplashCursor.jsx'
 import Register from './Components/Register.jsx'
-
+import Profile from './Components/Profile.jsx'
 
 const router = createBrowserRouter([
   {
@@ -62,6 +60,10 @@ const router = createBrowserRouter([
        {
         path : '/register',
         element :<Register />
+       },
+       {
+        path : '/profile' ,
+        element : <Profile />
        }
   ]
   }
@@ -73,6 +75,5 @@ createRoot(document.getElementById('root')).render(
       <ToastContainer autoClose={1000} pauseOnHover={false}  /> 
   <RouterProvider router = {router} />
             <Analytics/>
-            <SplashCursor />
   </Provider>
 )

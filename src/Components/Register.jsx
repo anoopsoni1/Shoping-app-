@@ -1,22 +1,43 @@
+import { createUserWithEmailAndPassword  } from 'firebase/auth';
+import { getFirestore, collection } from 'firebase/firestore';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { auth ,db } from '../Firebase';
+import {setDoc ,doc} from 'firebase/firestore'
+import { toast } from 'react-toastify';
 const Register = () => {
   const [form, setForm] = useState({
-    fullName: '',
     email: '',
-    password: '',
-    confirmPassword: '',
+    password: ''
   });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: Add validation & API logic here
-    console.log('Form submitted:', form);
+       try {
+      await createUserWithEmailAndPassword(auth , form.email ,form.password) ;
+      const user = auth.currentUser ;
+      console.log(user)
+      if(user){
+        await setDoc(doc(db ,"Users" ,user.uid),{
+          email :user.email ,
+        })
+  toast.success(`${form.email} Registered Succesfully` , {
+    position : "top-center" ,
+    autoClose : 4000 ,
+    pauseOnHover : false,
+  });
+      }
+       } catch (error) {
+        toast.success(`${error}` , {
+          position : "bottom-center" ,
+          autoClose : 4000 ,
+          pauseOnHover : false,
+        } )
+       }
   };
 
   return (
@@ -33,6 +54,7 @@ const Register = () => {
           <input
             type="email"
             name="email"
+            autoComplete='current-email'
             value={form.email}
             onChange={handleChange}
             className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -45,6 +67,7 @@ const Register = () => {
           <input
             type="password"
             name="password"
+            autoComplete='current-password'
             value={form.password}
             onChange={handleChange}
             className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"

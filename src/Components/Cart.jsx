@@ -29,7 +29,7 @@ function Cart() {
                   <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded" />
                   <div>
                     <h2 className="text-xl font-semibold">{item.name}</h2>
-                    <p className="text-gray-600">${item.price} × {item.quantity}</p>
+                    <p className="text-gray-600">₹{item.price} × {item.quantity}</p>
                   </div>
                 </div>
                 <button
@@ -43,7 +43,7 @@ function Cart() {
           </div>
 
           <div className="mt-8 text-right">
-            <h2 className="text-2xl font-bold">Total: ${total.toFixed(2)}</h2>
+            <h2 className="text-2xl font-bold">Total: ₹{total.toFixed(2)}</h2>
           </div>
         </>
       )}
