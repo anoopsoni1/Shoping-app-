@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function LoginPage() {
   const hello = ()=>{
@@ -61,7 +62,7 @@ export default function LoginPage() {
           </div>
   
           <div className="mt-6 text-sm text-center">
-            Don't have an account? <a  className="text-blue-600 hover:underline">Sign up</a>
+            Don't have an account? <Link to="/register" className="text-blue-600 hover:underline">Sign up</Link>
           </div>
         </div>
       </div>

@@ -1,13 +1,10 @@
 import React, { useState , useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-
+import  CircularText from "./Circular"
 function Header() { 
   return (
  <>
     <header className="flex justify-between items-center p-6 bg-gray-800 text-white">
-   
-    <div className="text-2xl font-bold"><img src="https://www.coreldraw.com/static/cdgs/landing_pages/seo/logo-design/08-symmetry.jpg" alt="#"  height={80} width={80} className='rounded-full'  /></div>
-
     <nav className="hidden md:flex space-x-8 ">
         <span className="text-lg cursor-pointer hover:text-yellow-400"> <NavLink className={({isActive})=> 
          `${isActive ? "text-orange-400" : "text-silver"}`} to='/'>Home</NavLink>
