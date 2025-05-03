@@ -11,7 +11,6 @@ function Cart() {
     dispatch(removefromcart(id));
     toast.success(`${name} removed from cart!`);
   };
-
   const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (

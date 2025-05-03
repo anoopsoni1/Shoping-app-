@@ -57,7 +57,7 @@ function Home() {
         Discover Your 
         <RotatingText
      texts={['Trends', 'Brands', 'Choices']}
-    mainClassName="px-2 sm:px-2 md:px-3 bg-gray-800 text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+    mainClassName="px-2 sm:px-2 md:px-3  text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
     staggerFrom={"last"}
     initial={{ y: "100%" }}
     animate={{ y: 0 }}

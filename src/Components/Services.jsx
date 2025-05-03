@@ -4,7 +4,7 @@ function Services() {
   return (
   <>
   
-  <section class="bg-gray-800 text-white text-center py-20">
+  <section class="bg-cyan-800 text-white text-center py-20">
         <h1 class="text-4xl font-extrabold">Discover Our Services</h1>
         <p class="mt-4 text-lg">We offer top services to help your business grow and succeed.</p>
     </section>

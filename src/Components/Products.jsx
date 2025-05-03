@@ -21,112 +21,118 @@ function Products() {
     navigate('/buy');
   };
 
+  const categories = [
+    { id: 1, name: 'Shirts', image: 'https://source.unsplash.com/400x300/?shirt' },
+    { id: 2, name: 'Shoes', image: 'https://source.unsplash.com/400x300/?shoes' },
+    { id: 3, name: 'Accessories', image: 'https://source.unsplash.com/400x300/?accessories' },
+    { id: 4, name: 'Jackets', image: 'https://source.unsplash.com/400x300/?jacket' },
+  ];
 
   const products = [
     { 
       id: nanoid(),
-      name : "anoop" ,
+      name : "Men Puma Smashic Unisex Sneakers At Nykaa",
       price : 64.55 ,
       image : 'https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/16513990/2022/1/26/d8f01fca-59e2-4f82-8214-9cd61d373be41643184909272-Roadster-Men-White-Sneakers-6661643184908868-1.jpg'
     },
     { 
       id: nanoid(),
-      name : "product 6" ,
+      name : "CARLO Romano Men's Lace up stylish Denim Sneaker" ,
       price : 94.55 ,
       image : 'https://m.media-amazon.com/images/I/51sDLAxmy3L._AC_UY1000_.jpg'
     } ,
     { 
       id: nanoid(),
-      name : "product 7" ,
+      name : "SEN ELVIN Women's Stylish Analog Wrist Watch" ,
       price : 34.85 ,
       image : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtG6-2oWZHp_JTlBEBZ3l2bmbBx0PZzvKqsQ&s'
     },
     { 
       id: nanoid(),
-      name : "product 8" ,
+      name : "Sidhidata Women's Soft Zimmy Choo Fandy Silk Saree" ,
       price : 84.95 ,
       image : 'https://ibisfab.com/cdn/shop/files/jacquard-silk-sarees-dark-wine-colour-wedding-wear-1.jpg?v=1716026906'
     },
     { 
       id: nanoid(),
-      name : "product 9" ,
+      name : "Yashika Women's Fancy Banarasi Kanjivaram Art Silk Saree" ,
       price : 74.67 ,
       image : 'https://m.media-amazon.com/images/I/614uxdVXGGL._AC_UY1100_.jpg'
     },
     { 
       id: nanoid(),
-      name : "product 10" ,
+      name : "MacBook Pro M4 16-inch (2024) - 48GB RAM, 1TB SSD - Space Black-Apple" ,
       price : 68.51 ,
       image : 'https://cdn.vox-cdn.com/thumbor/4FY_VHvSCm0r4R9eUxmeHfL03aA=/0x0:2040x1360/2000x1333/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/22046476/vpavic_4291_20201113_0366.0.jpg'
     },
     { 
       id: nanoid(),
-      name : "product 11" ,
+      name : "Built in Oven Motorised Rotisserie Turbo Fan 78Ltr Multi-function" ,
       price : 54.45 ,
       image : 'https://www.foodandwine.com/thmb/wtSAc8XIifwjyd8BMFZbErAOyQc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/faw-product-breville-smart-rkilgore-44-c5a16502b0084c71aca178479399f2b8.jpg'
     },
     { 
       id: nanoid(),
-      name : "product 12" ,
+      name : "BENYAR Men's Chronograph Quartz Movement Watch" ,
       price : 99.65 ,
       image : 'https://images-cdn.ubuy.co.in/654b8e16333d0d5c3130b3e8-lige-mens-watches-waterproof-stainless.jpg'
     },
     { 
       id: nanoid(),
-      name : "product 13" ,
+      name : "Realme Buds T300 Ear Earbuds 30dB ANC" ,
       price : 26.57 ,
       image : 'https://m.media-amazon.com/images/I/71fYAthCwfL.jpg'
     },
     { 
       id: nanoid(),
-      name : "product 14" ,
+      name : "Pigeon 2 Slice Auto Pop Up Toaster" ,
       price : 78.89 ,
       image : 'https://dynamicdistributors.in/wp-content/uploads/2023/10/Bajaj-ATX-3-750-Watt-Pop-up-Toaster-2-Slice-Automatic-Pop-up-Toaster-Dust-Cover-Slide-Out-Crumb-Tray-6-Level-Browning-Controls-2-Year-Warranty-by-Bajaj-BlackSilver-Electric-Toaster-0.jpg'
     },
     { 
       id: nanoid(),
-      name : "product 15" ,
+      name : "Banarasi Silk Bollywood Style Crushed Sarees" ,
       price : 32.51 ,
       image : 'https://images2.alphacoders.com/117/thumb-1920-1172003.jpg'
     },
     { 
       id: nanoid(),
-      name : "product 16" ,
+      name : "Saree Mall Yellow Embellished Saree" ,
       price : 78.52 ,
       image : 'https://w0.peakpx.com/wallpaper/580/545/HD-wallpaper-vidya-beautiful-hotpic-saree-smiling.jpg'
     },
     { 
       id: nanoid(),
-      name : "product 17" ,
+      name : "Rani Saahiba Red & Golden Woven Design Saree" ,
       price : 75.34 ,
       image : 'https://omsaraimages.s3.eu-west-2.amazonaws.com/wp-content/uploads/20191111150932/1037-1.jpg'
     },
     { 
       id: nanoid(),
-      name : "product 18" ,
+      name : "Fastrack Men's Streetstyle Digital Dial Strap Watch" ,
       price : 78.69 ,
       image : 'https://i.redd.it/5izdtm01avbc1.png'
     },
     { 
       id: nanoid(),
-      name : "product 19" ,
+      name : "Atom Men's Spring Edge Alpha 2 Mesh Basics Sneakers" ,
       price : 46.58 ,
       image : 'https://m.media-amazon.com/images/I/61ZpKWxNwwL.jpg'
     },
     { 
       id: nanoid(),
-      name : "product 20" ,
+      name : "RedOAKMIN GAVIN  Fabric  Chair with Wood Legs " ,
       price : 36.55 ,
       image : 'https://magnoliahome.co.in/wp-content/uploads/2021/08/Jasper-Arm-Chair-1.1-1.jpg'
     }, { 
       id: nanoid(),
-      name : "product 21" ,
+      name : "Home furniture Wooden Sofa Set for Living Room" ,
       price : 78.5,
       image : 'https://m.media-amazon.com/images/I/61klPbpaRfL.jpg'
     },
     { 
       id: nanoid(),
-      name : "product 22" ,
+      name : "The Roadster Lifestyle Co Men's Solid Sneakers" ,
       price : 96.55 ,
       image : 'https://5.imimg.com/data5/ANDROID/Default/2022/2/RD/UE/RG/73718625/product-jpeg.jpg'
     }
@@ -134,7 +140,6 @@ function Products() {
   const filteredProducts = products.filter(product =>
     product.name.toLowerCase().includes(search.toLowerCase())
   );
-   
   return (
     <>  
     <main className="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">

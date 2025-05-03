@@ -27,7 +27,7 @@ function About() {
         </div>
     </section>
 
-    <section class="bg-blue-600 text-white py-12">
+    <section class="bg-pink-900 text-white py-12">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-semibold mb-4">Get in Touch</h2>
             <p class="text-lg mb-6">Have any questions or feedback? Feel free to reach out to us!</p>

@@ -3,7 +3,7 @@ import React from 'react'
 function Contact() {
   return (
    <>
-    <section class="bg-blue-600 text-white text-center py-20">
+    <section class="bg-teal-600 text-white text-center py-20">
         <h1 class="text-4xl font-extrabold">Contact Us</h1>
         <p class="mt-4 text-lg">We'd love to hear from you! Please fill out the form below.</p>
     </section>

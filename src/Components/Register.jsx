@@ -8,7 +8,9 @@ import { toast } from 'react-toastify';
 const Register = () => {
   const [form, setForm] = useState({
     email: '',
-    password: ''
+    password: '',
+    FirstName : "" ,
+    LastName : ""
   });
 
   const handleChange = (e) => {
@@ -20,16 +22,18 @@ const Register = () => {
        try {
       await createUserWithEmailAndPassword(auth , form.email ,form.password) ;
       const user = auth.currentUser ;
-      console.log(user)
+      toast.success(`${form.FirstName} Registered Succesfully` , {
+        position : "top-center" ,
+        autoClose : 4000 ,
+        pauseOnHover : false,
+      });
       if(user){
         await setDoc(doc(db ,"Users" ,user.uid),{
           email :user.email ,
+          FirstName: form.FirstName.trim(),
+          LastName: form.LastName.trim(),
         })
-  toast.success(`${form.email} Registered Succesfully` , {
-    position : "top-center" ,
-    autoClose : 4000 ,
-    pauseOnHover : false,
-  });
+       
       }
        } catch (error) {
         toast.success(`${error}` , {
@@ -39,7 +43,6 @@ const Register = () => {
         } )
        }
   };
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <form
@@ -50,6 +53,30 @@ const Register = () => {
 
 
         <div className="mb-4" id="one">
+
+        <label className="block mb-1 font-medium">FirstName</label>
+          <input
+            type="text"
+            name="FirstName"
+            autoComplete='given-name'
+            value={form.FirstName}
+            onChange={handleChange}
+            className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+        <label className="block mb-1 font-medium">LastName</label>
+          <input
+            type="text"
+            name="LastName"
+            autoComplete='family-name'
+            value={form.LastName}
+            onChange={handleChange}
+            className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+
+
+
           <label className="block mb-1 font-medium">Email</label>
           <input
             type="email"
