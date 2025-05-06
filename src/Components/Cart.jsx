@@ -6,11 +6,12 @@ import { toast } from 'react-toastify';
 function Cart() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartitem);
-
+   
   const handleRemove = (id) => {
     dispatch(removefromcart(id));
     toast.success(`${name} removed from cart!`);
   };
+
   const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
@@ -40,9 +41,9 @@ function Cart() {
               </div>
             ))}
           </div>
-
+          
           <div className="mt-8 text-right">
-            <h2 className="text-2xl font-bold">Total: ₹{(total.toFixed(2))}</h2>
+            <h2 className="text-2xl font-bold">Total: ₹{(total.toFixed(2))}</h2> 
           </div>
         </>
       )}

@@ -1,8 +1,8 @@
 import React from 'react'
-
 function Subcategory() {
   return (
-    <div>Subcategory</div>
+    <>
+    </>
   )
 }
 

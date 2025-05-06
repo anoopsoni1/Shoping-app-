@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addtocart } from '../Feature/Slice';
+import { addtocart ,addtobuy } from '../Feature/Slice';
 import { toast } from 'react-toastify';
 import { nanoid } from '@reduxjs/toolkit';
 import RotatingText from './RotatingText';
 
 function Home() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleAddToCart = (product) => {
     dispatch(addtocart(product));
@@ -16,9 +15,8 @@ function Home() {
   };
 
   const handleBuyNow = (product) => {
-    dispatch(addtocart(product));
-    toast.success(`Proceeding to checkout for ${product.name}`);
-    navigate('/buy');
+    dispatch(addtobuy(product));
+    toast.success(`${product.name} added successfully`);
   };
 
   const products = [
@@ -54,7 +52,7 @@ function Home() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
           Discover Your
           <RotatingText
-            texts={['Trends', 'Brands', 'Choices']}
+            texts={['Trends', 'Brands', 'Choices','New Arrivals',"Top Categories" ,'Bestsellers']}
             mainClassName=" text-white text-center  flex justify-center"
             staggerFrom="last"
             initial={{ y: "100%" }}

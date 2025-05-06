@@ -18,7 +18,7 @@ function Header() {
          `${isActive ? "text-orange-400" : "text-silver"}`} to='/category'>Category</NavLink></span>
     </nav>
     <div className='flex gap-7'>
-     <button  className='bg-yellow-400 text-gray-800 py-2 px-6 rounded-md font-semibold hover:bg-yellow-500 transition duration-300'> <Link to='/cart'>Cart</Link> </button>
+     <button  className='bg-yellow-400 text-gray-800 py-2 px-6 rounded-md font-semibold hover:bg-yellow-500 transition duration-300'> <Link to='/buy'>Cart</Link> </button>
     <button className="bg-yellow-400 text-gray-800 py-2 px-6 rounded-md font-semibold hover:bg-yellow-500 transition duration-300">
       <Link to="/login" > Get Started</Link>  
     </button>

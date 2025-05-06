@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom'
 import { nanoid } from '@reduxjs/toolkit';
 function Products() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [search, setSearch] = useState("");
 
 
@@ -18,7 +17,6 @@ function Products() {
   const handleBuyNow = (product) => {
     dispatch(addtocart(product));
     toast.success(` ${product.name}!`);
-    navigate('/buy');
   };
   const products = [
     { 
