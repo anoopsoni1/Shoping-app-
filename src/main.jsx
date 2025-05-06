@@ -18,6 +18,7 @@ import { Analytics } from "@vercel/analytics/react"
 import Register from './Components/Register.jsx'
 import Profile from './Components/Profile.jsx'
 import Category from './Components/Category.jsx'
+import Subcategory from './Components/Subcategory.jsx'
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
        {
         path : '/category' ,
         element : <Category />
+       },
+       {
+        path : '/subcategory' ,
+        element : <Subcategory />
        }
   ]
   }

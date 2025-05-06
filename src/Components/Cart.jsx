@@ -14,7 +14,7 @@ function Cart() {
   const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
-    <div className="p-8 max-w-5xl mx-auto">
+    <div className="p-8 max-w-5xl mx-auto text-center">
       <h1 className="text-3xl font-bold mb-6">Your Cart</h1>
 
       {cartItems === 0 ? (
@@ -42,7 +42,7 @@ function Cart() {
           </div>
 
           <div className="mt-8 text-right">
-            <h2 className="text-2xl font-bold">Total: ₹{total.toFixed(2)}</h2>
+            <h2 className="text-2xl font-bold">Total: ₹{(total.toFixed(2))}</h2>
           </div>
         </>
       )}

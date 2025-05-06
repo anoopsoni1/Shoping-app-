@@ -32,7 +32,7 @@ function Services() {
     </section>
 
 
-    <section id="contact" class="bg-gray-100 py-20">
+    <section id="contact" class="py-20">
         <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-3xl font-bold mb-8">Get In Touch</h2>
             <p class="text-lg text-gray-600 mb-6">Have any questions or want to work with us? Feel free to reach out!</p>

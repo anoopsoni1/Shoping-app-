@@ -926,7 +926,6 @@ export default function InfiniteMenu({ items = [] }) {
 
       {activeItem && (
         <>
-          {/* Title */}
           <h2
             className={`
           select-none

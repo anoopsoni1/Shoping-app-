@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 function Header() { 
   return (
  <>
-    <header className="flex justify-between items-center p-6 bg-gray-800 text-white">
+    <header className="flex justify-between items-center p-4 font-semibold">
     <nav className="hidden md:flex space-x-8 ">
         <span className="text-lg cursor-pointer hover:text-yellow-400"> <NavLink className={({isActive})=> 
          `${isActive ? "text-orange-400" : "text-silver"}`} to='/'>Home</NavLink>
@@ -17,7 +17,7 @@ function Header() {
            <span className="text-lg cursor-pointer hover:text-yellow-400"><NavLink className={({isActive})=> 
          `${isActive ? "text-orange-400" : "text-silver"}`} to='/category'>Category</NavLink></span>
     </nav>
-    <div className='flex gap-7 '>
+    <div className='flex gap-7'>
      <button  className='bg-yellow-400 text-gray-800 py-2 px-6 rounded-md font-semibold hover:bg-yellow-500 transition duration-300'> <Link to='/cart'>Cart</Link> </button>
     <button className="bg-yellow-400 text-gray-800 py-2 px-6 rounded-md font-semibold hover:bg-yellow-500 transition duration-300">
       <Link to="/login" > Get Started</Link>  
