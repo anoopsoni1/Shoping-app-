@@ -21,6 +21,7 @@ const Register = () => {
     e.preventDefault();
        try {
       await createUserWithEmailAndPassword(auth , form.email ,form.password) ;
+    
       const user = auth.currentUser ;
       toast.success(`${form.FirstName} Registered Succesfully` , {
         position : "top-center" ,
@@ -30,10 +31,9 @@ const Register = () => {
       if(user){
         await setDoc(doc(db ,"Users" ,user.uid),{
           email :user.email ,
-          FirstName: form.FirstName.trim(),
-          LastName: form.LastName.trim(),
-        })
-       
+          FirstName: form.FirstName,
+          LastName:form.LastName
+        }) ;
       }
        } catch (error) {
         toast.success(`${error}` , {
@@ -74,9 +74,6 @@ const Register = () => {
             className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
-
-
-
           <label className="block mb-1 font-medium">Email</label>
           <input
             type="email"

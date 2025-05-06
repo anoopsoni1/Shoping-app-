@@ -18,16 +18,22 @@ import { Analytics } from "@vercel/analytics/react"
 import Register from './Components/Register.jsx'
 import Profile from './Components/Profile.jsx'
 import Category from './Components/Category.jsx'
-import Subcategory from './Components/Subcategory.jsx'
+import Bags from './Components/Bags.jsx'
+import App from './App.jsx'
+
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element : <Layout />,
+    element : <Layout/>,
     children : [
       {
         path : '' ,
-        element : <Home /> ,
+        element : <Home  /> ,
+       } ,
+       {
+        path : '' ,
+        element : <App /> ,
        } ,
        {
         path : '/about' ,
@@ -67,15 +73,16 @@ const router = createBrowserRouter([
        },
        {
         path : '/category' ,
-        element : <Category />
+        element : <Category />,
        },
-       {
-        path : '/subcategory' ,
-        element : <Subcategory />
-       }
+    { 
+      path : "bags",
+      element : <Bags />
+    }    
   ]
   }
 ])
+
 
 
 createRoot(document.getElementById('root')).render(

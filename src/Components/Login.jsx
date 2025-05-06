@@ -7,7 +7,7 @@ export default function LoginPage() {
   const [email ,setemail] = useState("") ;
   const [password ,setpassword] = useState("") ;
    const Handlesubmit = async (e)=>{
-    e.preventDefault()
+      e.preventDefault() ;
     try {
       await signInWithEmailAndPassword(auth ,email ,password)
       console.log("userloggedin");

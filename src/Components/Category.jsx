@@ -15,7 +15,7 @@ function Category() {
     { id:8, name:  'Buds', image: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRDWoRuyaKLyw24PJMr7N3NrXTpamXrzYyF-g58dSpm-P-88vzVmF8cYmvfSgcPYoXqG-HbltcmY90qGF3pd_bBsi905g2U8WFHtfcwf9sYHgyN2CEhwnVdsA' }
   ]
    if(open==categories[0].id){
-      window.location.href = "/subcategory"
+      window.location.href = "/bags"
      }
    else if(open==categories[1].id){
      window.location.href = "/shoes" 
