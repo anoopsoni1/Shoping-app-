@@ -5,16 +5,16 @@ function Header() {
  <>
     <header className="flex justify-between items-center p-4 font-semibold">
     <nav className="hidden md:flex space-x-8 ">
-        <span className="text-lg cursor-pointer hover:text-yellow-400"> <NavLink className={({isActive})=> 
+        <span className="text-lg cursor-pointer hover:text-purple-600"> <NavLink className={({isActive})=> 
          `${isActive ? "text-orange-400" : "text-silver"}`} to='/'>Home</NavLink>
            </span>
-        <span className="text-lg cursor-pointer hover:text-yellow-400"><NavLink  className={({isActive})=> 
+        <span className="text-lg cursor-pointer hover:text-purple-600"><NavLink  className={({isActive})=> 
          `${isActive ? "text-orange-400" : "text-silver"}`} to='/about'> About</NavLink></span>
-        <span className="text-lg cursor-pointer hover:text-yellow-400"><NavLink className={({isActive})=> 
+        <span className="text-lg cursor-pointer hover:text-purple-600"><NavLink className={({isActive})=> 
          `${isActive ? "text-orange-400" : "text-silver"}`} to='/services'>Services</NavLink></span>
-        <span className="text-lg cursor-pointer hover:text-yellow-400"><NavLink className={({isActive})=> 
+        <span className="text-lg cursor-pointer hover:text-purple-600"><NavLink className={({isActive})=> 
          `${isActive ? "text-orange-400" : "text-silver"}`} to='/contact'>Contact</NavLink></span>
-           <span className="text-lg cursor-pointer hover:text-yellow-400"><NavLink className={({isActive})=> 
+           <span className="text-lg cursor-pointer hover:text-purple-600"><NavLink className={({isActive})=> 
          `${isActive ? "text-orange-400" : "text-silver"}`} to='/category'>Category</NavLink></span>
     </nav>
     <div className='flex gap-7'>
