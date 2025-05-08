@@ -17,9 +17,6 @@ import Buy from './Components/Buy.jsx'
 import { Analytics } from "@vercel/analytics/react"
 import Register from './Components/Register.jsx'
 import Profile from './Components/Profile.jsx'
-import Category from './Components/Category.jsx'
-import Bags from './Components/Bags.jsx'
-import App from './App.jsx'
 
 
 const router = createBrowserRouter([
@@ -30,10 +27,6 @@ const router = createBrowserRouter([
       {
         path : '' ,
         element : <Home  /> ,
-       } ,
-       {
-        path : '' ,
-        element : <App /> ,
        } ,
        {
         path : '/about' ,
@@ -71,14 +64,7 @@ const router = createBrowserRouter([
         path : '/profile' ,
         element : <Profile />
        },
-       {
-        path : '/category' ,
-        element : <Category />,
-       },
-    { 
-      path : "bags",
-      element : <Bags />
-    }    
+         
   ]
   }
 ])

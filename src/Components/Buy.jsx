@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector,useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { removefrombuy } from '../Feature/Slice';
+import { enIN } from 'date-fns/locale';
 
 const Buy = () => {
 
@@ -88,7 +89,7 @@ const Buy = () => {
               <li key={index} className="py-3 flex justify-between items-center">
                 <div>
                   <p className="font-medium">{item.name}</p>
-                  <p className="text-gray-600">₹{item.price} × {item.quantity}</p>
+                  <p className="text-gray-600">₹{(item.price)} × {item.quantity}</p>
                 </div>
                 <img
                   src={item.image}

@@ -48,7 +48,7 @@ function Home() {
 
   return (
     <>
-      <section className="bg-[url('https://t4.ftcdn.net/jpg/03/09/86/97/360_F_309869755_IquCHHxF7YABo2odctUGEjMrgVDSM8qV.jpg')] bg-cover bg-center text-white text-center py-16 px-4 sm:px-6 md:px-12">
+      <section className="bg-[url('https://t3.ftcdn.net/jpg/01/17/33/22/360_F_117332203_ekwDZkViF6M3itApEFRIH4844XjJ7zEb.jpg')] bg-cover bg-center text-white text-center py-20 px-4 sm:px-6 md:px-12">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
           Discover Your
           <RotatingText
