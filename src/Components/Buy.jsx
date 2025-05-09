@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useSelector,useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { removefrombuy } from '../Feature/Slice';
-import { enIN } from 'date-fns/locale';
 
 const Buy = () => {
 
