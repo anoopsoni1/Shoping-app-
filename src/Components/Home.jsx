@@ -97,7 +97,7 @@ function Home() {
                 </button>
                 <button
                   onClick={() => handleBuyNow(product)}
-                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full transition w-full"
+                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full transition w-full "
                 >
                   Buy Now
                 </button>
