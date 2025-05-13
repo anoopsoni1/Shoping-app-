@@ -4,6 +4,8 @@ import { addtocart ,addtobuy } from '../Feature/Slice';
 import { toast } from 'react-toastify';
 import { nanoid } from '@reduxjs/toolkit';
 import RotatingText from './RotatingText';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../Firebase';
 
 function Home() {
   const dispatch = useDispatch();
@@ -17,6 +19,13 @@ function Home() {
     dispatch(addtobuy(product));
     toast.success(`${product.name} added successfully`);
   };
+
+  onAuthStateChanged(auth, (user) => {
+  if (user) {
+  } else {
+    console.log("No user signed in.");
+  }
+});
 
   const products = [
     {

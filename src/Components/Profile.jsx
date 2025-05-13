@@ -34,7 +34,7 @@ const Profile = () => {
     {users ? (<>
     <div className="grid place-items-center text-3xl">
       <h1 className="font-semibold text-slate-800 text-3xl">Welcome {users.FirstName} </h1>
-        <p>Email : {users.email}</p>
+        <p> Email : {users.email}</p>
         <p>FirstName :{users.FirstName}</p>
         <p>LastName :{users.LastName}</p>
      </div>

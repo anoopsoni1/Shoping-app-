@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { auth  } from '../Firebase';
 import { toast } from 'react-toastify';
+import { signInWithPopup } from 'firebase/auth';
+import { provider } from '../Firebase';
 export default function LoginPage() {
   const [email ,setemail] = useState("") ;
   const [password ,setpassword] = useState("") ;
@@ -26,6 +28,17 @@ export default function LoginPage() {
           } )
     }
    }
+      
+    const handleGoogleLogin = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+         const user = result.user;
+      console.log("Logged in as:", user.displayName);
+           
+    }  catch (error) {
+      console.error("Login error:", error);
+    }
+  };
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
         <div className="max-w-md w-full bg-white p-8 rounded-2xl shadow-lg">
@@ -78,7 +91,7 @@ export default function LoginPage() {
   
           <div className="mt-4 flex justify-center gap-4">
             <button className="bg-gray-100 p-2 rounded-full hover:shadow-md transition">
-              <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className="h-6 w-6" />
+              <img onClick={handleGoogleLogin} src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className="h-6 w-6" />
             </button>
             <button className="bg-gray-100 p-2 rounded-full hover:shadow-md transition">
               <img src="https://www.svgrepo.com/show/512317/github-142.svg" alt="GitHub" className="h-6 w-6" />

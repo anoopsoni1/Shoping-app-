@@ -1,5 +1,26 @@
 import { Link, NavLink } from 'react-router-dom'
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../Firebase';
+import { signOut } from 'firebase/auth';
+import { toast } from 'react-toastify';
 function Header() { 
+  const handleLogout = () => {
+  signOut(auth)
+    .then(() => console.log("User signed out"))
+    .catch((error) => console.error("Sign out error:", error));
+};
+  onAuthStateChanged(auth, (user) => {
+  if (user) {
+   const getstarted = document.getElementById("one") ;
+       getstarted.innerHTML = "Logout"
+       getstarted.style.height = "40px"
+       getstarted.style.width = "85px"  
+        getstarted.onclick = {handleLogout}
+  } else {
+    console.log("No user signed in.");
+  }
+});
+
   return (
  <>
     <header className="flex justify-between items-center p-4 font-semibold">
@@ -16,8 +37,8 @@ function Header() {
     </nav>
     <div className='flex gap-10'>
      <button  className='bg-yellow-400 text-gray-800 py-2 px-6 rounded-md font-semibold hover:bg-yellow-500 transition duration-300'> <Link to='/buy'>Cart</Link> </button>
-    <button className="bg-yellow-400 text-gray-800 py-2 px-6 rounded-md font-semibold hover:bg-yellow-500 transition duration-300">
-      <Link to="/login" > Get Started</Link>  
+    <button id="one" className="bg-yellow-400 text-gray-800 py-2 px-6 rounded-md font-semibold hover:bg-yellow-500 transition duration-300">
+      <Link to="/login"> Get Started</Link>  
     </button>
     </div>
 </header>
