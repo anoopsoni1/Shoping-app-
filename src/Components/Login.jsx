@@ -34,7 +34,7 @@ export default function LoginPage() {
       const result = await signInWithPopup(auth, provider);
          const user = result.user;
       console.log("Logged in as:", user.displayName);
-           
+           window.location.href = "/"
     }  catch (error) {
       console.error("Login error:", error);
     }
